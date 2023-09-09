@@ -30,7 +30,7 @@ import { Search } from "@element-plus/icons-vue";
         </template>
     
         <template class="btn">
-          <el-button type="primary" size="large" style="margin-right: 10px;">登录</el-button>
+          <router-link to="/login"><el-button type="primary" size="large" style="margin-right: 10px;" >登录</el-button></router-link>
           <el-button type="success" size="large">注册</el-button>
         </template>
       </el-menu>

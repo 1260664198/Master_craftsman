@@ -16,6 +16,14 @@ import '@/styles/reset.css'
 import routes from './router'
 app.use(routes)
 
+// 引入pinia仓库
+import pinia from './store'
+app.use(pinia)
+
+// 引入路由鉴权
+import './permission'
+
+// 富文本编辑器
 import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 

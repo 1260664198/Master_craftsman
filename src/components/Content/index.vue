@@ -1,17 +1,15 @@
 <script setup>
-import { ArrowRightBold } from "@element-plus/icons-vue";
+
 </script>
 
 <template>
   <div>
+    <!-- 标题部分 -->
     <div class="title">
-      <h1>探索项目</h1>
-      <router-link class="span" to="path"
-        >电路
-        <el-icon style="vertical-align: top; color: #aeaeae">
-          <ArrowRightBold /> </el-icon
-      ></router-link>
+      <slot name="h1"></slot>
+      <slot name="title"></slot>
     </div>
+    <!-- 图片部分 -->
     <div class="text">
       <div class="text1">
         <router-link to="path">
