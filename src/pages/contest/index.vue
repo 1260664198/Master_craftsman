@@ -92,17 +92,26 @@
     <div class="success">
       <h1>优胜者圈子</h1>
       <p>查看最近结束的这些比赛的最佳获胜者！</p>
-      <hr class="hr"/>
+      <hr class="hr" />
       <div class="successBox">
         <div class="left">
-          <img
-            src="https://content.instructables.com/F45/MPO1/LIOKVJPE/F45MPO1LIOKVJPE.jpg?auto=webp&crop=1240%2C600"
-          />
-          <el-button type="">查看所有获奖者</el-button>
+          <div>
+            <router-link to="path">
+              <img
+                src="https://content.instructables.com/F45/MPO1/LIOKVJPE/F45MPO1LIOKVJPE.jpg?auto=webp&crop=1240%2C600"
+              />
+            </router-link>
+          </div>
+          <router-link class="a" to="path">查看所有获奖者</router-link>
+
         </div>
         <div class="right">
           <ul>
             <li>
+              <span class="position">
+                <span>123123</span>
+                <span></span>
+              </span>
               <img
                 src="https://content.instructables.com/FNZ/SVG7/LKL60B1X/FNZSVG7LKL60B1X.png?auto=webp&crop=1%3A1&frame=1&width=320"
               />
@@ -132,6 +141,7 @@
           </ul>
         </div>
       </div>
+      <hr class="hr" />
     </div>
   </div>
 </template>
@@ -266,30 +276,77 @@
       color: #555;
     }
     .hr {
-      margin: 20px 0;
+      width: 95.4%;
       border: 0;
       border-top: 1px solid #eee;
-      border-bottom: 1px solid #000;
+      margin: 30px 0;
+      border-bottom: 1px solid #fff;
     }
     .successBox {
       display: flex;
       background-color: #f6f6f6;
+      justify-content: space-between;
       margin: 0 30px;
       .left {
+        width: 40%;
         display: flex;
+        align-items: center;
         flex-direction: column;
-        width: 300px;
-        img {
+        div {
           width: 100%;
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .a {
+          font-size: 17.5px;
+          border-radius: 6px;
+          border: 1px solid #dedede;
+          padding: 17px 19px;
+          margin-top: 9px;
+          width: 90%;
+          text-align: center;
+          color: #333;
+        }
+        .a:hover {
+          background: #757575;
         }
       }
       .right {
+        margin-left: 20px;
         font-size: 14px;
+        text-align: left;
+        width: 58%;
+        position: relative;
         ul {
           display: flex;
           justify-content: space-evenly;
           li {
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            .position {
+              position: absolute; 
+              top: 20px;
+              span:nth-child(1) {
+                font-weight: 600;
+                color: #fff;
+                font-family: myriad-pro,sans-serif;
+                text-transform: uppercase;
+                font-size: 16px;
+                padding: 6px 10px;
+                background-color: #f6b21f;
+              }
+              span:nth-child(2) {
+                content:" ";
+                background: url(https://www.instructables.com/assets/img/contest/contest-flag-endcap.png) no-repeat;
+                background-size: contain;
+                width: 7px;
+                height: 32px;
+                position: absolute;
+                margin-top: -9px;
+              } 
+            }
+            padding: 0 4px;
+            width: 32%;
             img {
               width: 100%;
             }
@@ -299,6 +356,7 @@
               padding: 10px 13px 20px;
               background: #fff;
               p {
+                font-size: 14px;
               }
             }
           }

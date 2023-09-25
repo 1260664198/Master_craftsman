@@ -3,7 +3,7 @@ import { Search } from "@element-plus/icons-vue";
 </script>
 
 <template>
-  <div>
+
     <div class="header">
       <el-menu
         class="el-menu-demo"
@@ -14,7 +14,7 @@ import { Search } from "@element-plus/icons-vue";
       >
         <router-link to="/home">
           <el-menu-item index="0">
-            <img index="0" src="../../assets/instructables-logo-2023.svg" />
+            <img index="0" src="../../assets/instructables-logo-2023.svg" style="margin 20px 0"/>
           </el-menu-item>
         </router-link>
         <div class="flex-grow" />
@@ -31,11 +31,10 @@ import { Search } from "@element-plus/icons-vue";
     
         <template class="btn">
           <router-link to="/login"><el-button type="primary" size="large" style="margin-right: 10px;" >登录</el-button></router-link>
-          <el-button type="success" size="large">注册</el-button>
+          <router-link to="/register"><el-button type="success" size="large">注册</el-button></router-link>
         </template>
       </el-menu>
     </div>
-  </div>
 </template>
 
 <style lang="scss" scoped>

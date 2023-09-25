@@ -3,9 +3,7 @@ import { User, Lock } from "@element-plus/icons-vue";
 import { reactive, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { ElNotification } from "element-plus";
-// 引入获取当前时间的函数
-// @ts-ignore
-import { getTime } from "@/utils/time";
+
 // 引入用户相关的小仓库
 //   import useUserStore from '@/store/modules/user'
 //   let userStore = useUserStore()
@@ -39,7 +37,7 @@ const login = async () => {
     await userStore.userLogin(loginFrom);
     // 编程式导航跳转到展示数据首页
     // 判断登陆的时候,路由路劲当中是否有query参数,如果有就用query,没有跳转到首页
-    let redirect: any = $route.query.redirect;
+    let redirect = $route.query.redirect;
     $router.push({ path: redirect || "/" });
     ElNotification({
       type: "success",
@@ -52,7 +50,7 @@ const login = async () => {
     // 登陆失败的提示信息
     ElNotification({
       type: "error",
-      message: (error as Error).message,
+      message: error.message,
     });
   }
 };
@@ -89,8 +87,7 @@ const rules = {
 <template>
   <div class="login_container">
     <el-row>
-      <el-col :span="12"></el-col>
-      <el-col :span="12">
+        <el-col :span="12">
         <el-form
           class="login_from"
           :model="loginFrom"
@@ -126,13 +123,15 @@ const rules = {
           </el-form-item>
 
           <p class="goReg">
-            <span>没有帐号？</span>
+            <span>已有帐号？</span>
             <span>
-              <router-link to="/register">去注册</router-link>
+              <router-link to="/login">去登录</router-link>
             </span>
           </p>
         </el-form>
       </el-col>
+      <el-col :span="12"></el-col>
+      
     </el-row>
   </div>
 </template>
@@ -140,10 +139,11 @@ const rules = {
 .login_container {
   width: 100%;
   height: 100vh;
-  background: url("https://www.instructables.com/assets/img/signup/signup-background-craft3.jpg")
+  background: url("https://www.instructables.com/assets/img/signup/signup-background-workshop2.jpg")
     no-repeat center center fixed;
   background-size: cover;
   .login_from {
+    margin-left: 60px;
     position: relative;
     width: 80%;
     top: 30vh;

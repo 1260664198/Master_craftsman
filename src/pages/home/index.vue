@@ -13,49 +13,101 @@ import { ArrowRightBold } from "@element-plus/icons-vue";
     <Text />
     <!-- 探索项目部分 -->
 
-    
 
-
-    <Content>
+    <Content class="content">
       <template #h1>
         <h1>探索项目</h1>
-        <router-link class="span" to="path">电路
-          <el-icon style="vertical-align: top; color: #aeaeae">
-            <ArrowRightBold /> 
-          </el-icon>
-       </router-link>
+          <div>
+          <router-link class="span" to="/projects/circuits">电路
+            <el-icon style="vertical-align: top; color: #aeaeae">
+              <ArrowRightBold /> 
+            </el-icon>
+          </router-link>
+          </div>
       </template>
     </Content>
 
-    <Content>
+    <Content class="content">
     <template #title>
-      <router-link class="span" to="path">作坊
+      <div>
+        <router-link class="span" to="/projects/workshop">作坊
         <el-icon style="vertical-align: top; color: #aeaeae">
           <ArrowRightBold /> 
         </el-icon>
       </router-link>
+      </div>
     </template>
     </Content>
 
-    <Content>
+    <Content class="content">
       <template #title>
-        <router-link class="span" to="path">工艺
+        <div>
+          <router-link class="span" to="/projects/craft">工艺
+            <el-icon style="vertical-align: top; color: #aeaeae">
+              <ArrowRightBold /> 
+            </el-icon>
+          </router-link>
+        </div>
+      </template>
+    </Content>
+
+    <Content class="content">
+      <template #title>
+        <div>
+          <router-link class="span" to="/projects/cooking">烹饪
+            <el-icon style="vertical-align: top; color: #aeaeae">
+              <ArrowRightBold /> 
+            </el-icon>
+          </router-link>
+        </div>
+      </template>
+    </Content>
+
+    <Content class="content">
+      <template #title>
+        <div>
+          <router-link class="span" to="/projects/living">活的
+            <el-icon style="vertical-align: top; color: #aeaeae">
+              <ArrowRightBold /> 
+            </el-icon>
+          </router-link>
+        </div>
+      </template>
+    </Content>
+
+    <Content class="content">
+      <template #title>
+        <div>
+          <router-link class="span" to="/projects/outside">外部
+            <el-icon style="vertical-align: top; color: #aeaeae">
+              <ArrowRightBold /> 
+            </el-icon>
+          </router-link>
+        </div>
+      </template>
+    </Content>
+
+    <Content class="content">
+      <template #title>
+        <div>
+          <router-link class="span" to="/projects/teachers">教师
           <el-icon style="vertical-align: top; color: #aeaeae">
             <ArrowRightBold /> 
           </el-icon>
         </router-link>
+        </div>
       </template>
     </Content>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.title {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 100px;
-  margin-bottom: 40px;
+  .content {
+    margin-top: 40px;
+    div {
+      margin-bottom: 10px;
+    }
+  }
   h1 {
     font-size: 34px;
     font-weight: bold;
@@ -83,5 +135,4 @@ import { ArrowRightBold } from "@element-plus/icons-vue";
   .span:hover::after {
     transform: scaleX(1); /* 鼠标悬停时显示横线 */
   }
-}
 </style>
