@@ -38,6 +38,12 @@ export const constRoute = [
     meta: { title: '教学' }
   },
   {
+    path: '/contest',
+    component: () => import('@/pages/contest/index.vue'),
+    name: 'Contest',
+    meta: { title: '比赛' }
+  },
+  {
     path: '/projects',
     component: () => import('@/pages/projects/index.vue'),
     name: 'Projects',

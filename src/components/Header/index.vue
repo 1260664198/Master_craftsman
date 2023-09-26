@@ -34,6 +34,7 @@ import { Search } from "@element-plus/icons-vue";
           <router-link to="/register"><el-button type="success" size="large">注册</el-button></router-link>
         </template>
       </el-menu>
+      <el-backtop :right="100" :bottom="100" />
     </div>
 </template>
 

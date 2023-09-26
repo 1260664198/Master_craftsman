@@ -1,5 +1,4 @@
 <script setup>
-import { ArrowRight } from '@element-plus/icons-vue'
 </script>
 
 <template>
@@ -7,17 +6,18 @@ import { ArrowRight } from '@element-plus/icons-vue'
         <!-- 左侧内容区 -->
         <el-col class="left" :span="18">
             <h1>使用 Arduino 的 PPG 心电图</h1>
+
             <div class="content">
                 <p class="author">
                     <span>作者：</span>
-                    <span class="aBox">
+                    <span class="aBox link-underline">
                         <router-link to="/">
                             Peter Balch
                         </router-link>
                     </span>
                 </p>
                 <p class="author">
-                    <span class="aBox">
+                    <span class="aBox link-underline">
                         <router-link to="/">
                             Arduino 电路
                         </router-link>
@@ -36,7 +36,50 @@ import { ArrowRight } from '@element-plus/icons-vue'
             </div>
 
             <div class="body">
-                <img src="https://content.instructables.com/FRZ/G2PF/LMDGTKN1/FRZG2PFLMDGTKN1.jpg?auto=webp&frame=1&fit=bounds&md=33013f394bff1653995f42f15dd86881" alt="">
+                <div class="image">
+                    <img src="https://content.instructables.com/FRZ/G2PF/LMDGTKN1/FRZG2PFLMDGTKN1.jpg?auto=webp&frame=1&fit=bounds&md=33013f394bff1653995f42f15dd86881" alt="">
+                </div>
+
+                <div class="info">
+                    <div class="avatar">
+                        <div class="leftBox">
+                            <div class="avatarLeft">
+                                <router-link to="/">
+                                    <img src="https://content.instructables.com/FG3/E5RP/KD7DT18F/FG3E5RPKD7DT18F.bmp?auto=webp&crop=1%3A1&frame=1&width=130">
+                                </router-link>
+                            </div>
+                            <div class="avatarName">
+                                <p>
+                                    <span>通过</span>
+                                    <span class="link-underline">
+                                        <router-link to="/">
+                                            谭浩强
+                                        </router-link>
+                                    </span>
+                                </p>
+                                <p class="school link-underline">
+                                    <router-link to="/">
+                                        北京大学光华管理学院
+                                    </router-link>
+                                </p>
+                                <el-button type="info">跟随</el-button>
+                            </div>
+                        </div>
+                        <div class="rightBox">
+                            <div class="more">
+                                <p>作者的更多内容：</p>
+                            </div>
+                            <div class="avatarRight">
+                                <router-link to="path">
+                                    <img src="https://content.instructables.com/FH3/JFP9/KD6E7C43/FH3JFP9KD6E7C43.jpg?auto=webp&crop=1%3A1&frame=1&width=130">
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        關於： 陸球高中校園的FabLab設備備齐全的MakerSpace，配有Universal Systems 60W激光切割機，GlowForge激光切割機，OtherMill CNC铣床，Ultimaker 2 +和3 3D列印機，MakerBot R...更多关于 pltwball »
+                    </div>
+                </div>                
             </div>
         </el-col>
 
@@ -50,6 +93,36 @@ import { ArrowRight } from '@element-plus/icons-vue'
 </template>
 
 <style lang="scss" scoped>
+/* #region 定义通用的链接下划线样式 */
+/* 定义通用的链接下划线样式 */
+.link-underline {
+  color: #555;
+  position: relative;
+  transition: color 0.3s, border-bottom-width 0.3s;
+}
+
+.link-underline::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px; /* 调整下划线的高度 */
+  background-color: #555; /* 可以根据需要更改颜色 */
+  transition: width 0.3s ease;
+}
+
+/* 链接悬停时应用样式 */
+.link-underline:hover {
+  color: #000; /* 在悬停时更改文本颜色（可选） */
+}
+
+.link-underline:hover::before {
+  width: 100%;
+}
+// #endregion
+
 .container {
     margin: 0 20px;
     .left {
@@ -71,28 +144,16 @@ import { ArrowRight } from '@element-plus/icons-vue'
                 .aBox {
                     a {
                         color: #555;
-                        position: relative;
-                        transition: color 0.3s, border-bottom-width 0.3s;
                     }
                     a::before {
-                        content: "";
-                        position: absolute;
-                        bottom: 0;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        width: 0;
-                        height: 2px; /* Adjust the height of the underline as needed */
-                        background-color: #555; /* You can change this color to your preference */
-                        transition: width 0.3s ease;
-                        }
-
+                        background-color: pink; /* You can change this color to your preference */
+                    }
                         a:hover {
                         color: #000; /* Change the text color on hover if desired */
-                        }
-
+                    }
                         a:hover::before {
                         width: 100%;
-                        }
+                    }
                 }
             }
             .author::after {
@@ -108,11 +169,98 @@ import { ArrowRight } from '@element-plus/icons-vue'
                 color: #999;
             }
         }
+
+        .body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .image {
+
+            }
+            .info {
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                padding: 15px;
+                background-color: #f6f6f6;
+                margin: 0 auto 20px;
+                color: #777;
+                font-weight: 400;
+                display: flex;
+                flex-direction: column;
+                width: 800px;
+                .avatar {
+                    display: flex;
+                    justify-content: space-between;
+                    .leftBox {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .avatarLeft {
+                            width: 80px; 
+                            height: 80px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            margin-right: 15px;
+                            img {
+                                width: 100%; 
+                                height: 100%;
+                            }
+                        }
+                        .avatarName {
+                            p {
+                                line-height: 1.5;
+                                span:nth-child(1) {
+                                    font-size: 14px;
+                                }
+                                span:nth-child(2) {
+                                    font-size: 16px;
+                                    line-height: 1.5; 
+                                    font-weight: bold;
+                                    a {
+                                      color:#555;
+                                    }
+                                }
+                            }
+                            .school {
+                               a {
+                                font-size: 14px;
+                                color: #e86c00;
+                               }
+                               a::before {
+                                background-color: #555; /* You can change this color to your preference */
+                            }
+                                a:hover::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                    .rightBox {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .avatarRight {
+                            width: 80px;
+                            height: 80px;   
+                            img {
+                                width: 100%; 
+                                height: 100%; 
+                            }  
+                        }
+                        .more {
+
+                        }
+                    }
+                }
+            }
+        }
     }
     .right {
        margin-top: 2em;
        a {
-        position: sticky; 
+        display: block;
+        position: sticky;
         top: 80px;
         img {
             width:100%;

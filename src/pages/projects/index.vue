@@ -49,13 +49,14 @@ router.beforeEach((to, from, next) => {
           <el-button type="">你好</el-button>
         </div>
       </div>
+       <!-- 二级路由出口 -->
+       <router-view></router-view>
       <div class="body">
-        <!-- 二级路由出口 -->
-        <router-view></router-view>
+       
         <div class="cards">
           <div class="cardsItem">
             <div class="top">
-              <router-link to="path">
+              <router-link to="/author" target="_blank">
                 <img src="https://content.instructables.com/FLO/GHH7/LA13VB0P/FLOGHH7LA13VB0P.jpg?auto=webp&crop=1.2%3A1&frame=1&width=500">
                 <div>
                   <strong>
