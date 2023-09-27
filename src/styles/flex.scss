@@ -1,0 +1,61 @@
+$display: flex;
+$justify-content: center;
+$align-items: center;
+$flex-direction: column;
+$space-between: space-between;
+
+// 
+$flex-ac-jc-fc: (
+  display: $display,
+  justify-content: $justify-content,
+  align-items: $align-items,
+  flex-direction: $flex-direction,
+);
+.flex-ac-jc-fc {
+  @each $property, $value in $flex-ac-jc-fc {
+    #{$property}: $value;
+  }
+}
+
+// 
+$flex-ac-jc: (
+  display: $display,
+  align-items: $align-items,
+  justify-content: $justify-content,
+);
+.flex-ac-jc {
+  @each $property, $value in $flex-ac-jc {
+    #{$property}: $value;
+  }
+}
+
+// 
+$flex-ac: (
+    display: $display,
+    align-items: $align-items,
+);
+.flex-ac {
+    @each $property, $value in $flex-ac {
+        #{$property}: $value;
+    }
+}
+
+$flex-fc: (
+    display: $display,
+    flex-direction: $flex-direction,
+);
+.flex-fc {
+    @each $property, $value in $flex-fc {
+        #{$property}: $value;
+    }
+}
+
+$flex-js: (
+    display: $display,
+    justify-content: $space-between,
+);
+.flex-js {
+    @each $property, $value in $flex-js {
+        #{$property}: $value;
+    }
+}

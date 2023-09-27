@@ -8,10 +8,10 @@
       <h1>比赛</h1>
       <p>
         迄今为止，我们已经举办了
-        <router-link to="path" class="custom-link">
+        <router-link to="path" class="underline">
           1,000 多场比赛，获奖者超过 19,000 名 </router-link
         >加入
-        <router-link to="path" class="custom-link">赢家圈子</router-link>
+        <router-link to="path" class="underline">赢家圈子</router-link>
         ！
       </p>
     </div>
@@ -175,26 +175,6 @@
       line-height: 1.45;
       font-family: Helvetica, Arial, sans-serif;
       color: #555;
-      .custom-link {
-        color: #e86c00;
-        position: relative; /* 添加相对定位 */
-      }
-
-      .custom-link::before {
-        content: "";
-        position: absolute;
-        bottom: -2px; /* 控制横线距离底部的位置 */
-        left: 0;
-        width: 100%; /* 横线宽度 */
-        height: 1px; /* 横线高度 */
-        background-color: #e86c00; /* 横线颜色 */
-        transform: scaleX(0); /* 初始时横线不可见 */
-        transition: transform 0.2s ease-in-out; /* 添加平滑过渡效果 */
-      }
-
-      .custom-link:hover::before {
-        transform: scaleX(1); /* 鼠标悬停时显示横线 */
-      }
     }
   }
   .flex {

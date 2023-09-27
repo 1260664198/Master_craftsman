@@ -9,8 +9,8 @@ const app = createApp(App)
 // 先挂载ElementPlus插件，然后传递选项
 app.use(ElementPlus, { locale: zhCn })
 
-// 清除默认样式
-import '@/styles/reset.css'
+// scss全局变量
+import '@/styles/index.scss'
 
 // 再挂载路由
 import routes from './router'

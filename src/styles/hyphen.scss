@@ -1,0 +1,61 @@
+/* #region 定义通用的链接下划线样式 */
+/* 定义通用的链接下划线样式 */
+.link-underline {
+    color: #555;
+    position: relative;
+    transition: color 0.3s, border-bottom-width 0.3s;
+  }
+  
+  .link-underline::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px; /* 调整下划线的高度 */
+    background-color: #555; /* 可以根据需要更改颜色 */
+    transition: width 0.3s ease;
+  }
+  
+  /* 链接悬停时应用样式 */
+  .link-underline:hover {
+    color: #000; /* 在悬停时更改文本颜色（可选） */
+  }
+  
+  .link-underline:hover::before {
+    width: 100%;
+  }
+  // #endregion
+  
+  // #region
+  .underline {
+    color: #555;
+    position: relative;
+    transition: color 0.3s, border-bottom-width 0.3s;
+  }
+  
+  .underline::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px; /* 调整下划线的高度 */
+    background-color: #e86c00; /* 可以根据需要更改颜色 */
+    transition: width 0.3s ease;
+  }
+  
+  /* 链接悬停时应用样式 */
+  .underline:hover {
+    color: #e86c00; /* 在悬停时更改文本颜色（可选） */
+  }
+  
+  .underline:hover::before {
+    width: 100%;
+  }
+  // #endregion
+  
+
+  

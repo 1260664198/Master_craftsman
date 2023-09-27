@@ -7,7 +7,7 @@
         <el-col class="left" :span="18">
             <h1>使用 Arduino 的 PPG 心电图</h1>
 
-            <div class="content">
+            <div class="content flex-ac">
                 <p class="author">
                     <span>作者：</span>
                     <span class="aBox link-underline">
@@ -23,7 +23,7 @@
                         </router-link>
                     </span>
                 </p>
-                <div class="svg">
+                <div class="svg flex-ac">
                     <svg class='svg-icon views' xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='#00A1CF' d='M4.37 12c0-3.41 2.23-6.29 5.31-7.27C3.42 6.02.02 12 .02 12s3.4 5.98 9.67 7.26A7.622 7.622 0 0 1 4.37 12zm19.61 0s-3.4-5.98-9.67-7.27c3.08.98 5.31 3.86 5.31 7.27 0 3.4-2.23 6.28-5.31 7.26 6.27-1.28 9.67-7.26 9.67-7.26zm-7.03-2.43c-.33.66-1.01 1.12-1.8 1.12-1.11 0-2.02-.91-2.02-2.02 0-.75.41-1.41 1.02-1.75-.66-.28-1.39-.44-2.15-.44-3.05 0-5.52 2.47-5.52 5.52 0 3.05 2.47 5.52 5.52 5.52 3.05 0 5.52-2.47 5.52-5.52 0-.87-.2-1.7-.57-2.43z'/></svg>
                     <span>613</span>
                     
@@ -35,14 +35,14 @@
                 </div>
             </div>
 
-            <div class="body">
+            <div class="body flex-ac-jc-fc">
                 <div class="image">
                     <img src="https://content.instructables.com/FRZ/G2PF/LMDGTKN1/FRZG2PFLMDGTKN1.jpg?auto=webp&frame=1&fit=bounds&md=33013f394bff1653995f42f15dd86881" alt="">
                 </div>
 
-                <div class="info">
-                    <div class="avatar">
-                        <div class="leftBox">
+                <div class="info flex-fc">
+                    <div class="avatar flex-js">
+                        <div class="leftBox flex-ac-jc">
                             <div class="avatarLeft">
                                 <router-link to="/">
                                     <img src="https://content.instructables.com/FG3/E5RP/KD7DT18F/FG3E5RPKD7DT18F.bmp?auto=webp&crop=1%3A1&frame=1&width=130">
@@ -57,15 +57,15 @@
                                         </router-link>
                                     </span>
                                 </p>
-                                <p class="school link-underline">
+                                <p class="school underline">
                                     <router-link to="/">
                                         北京大学光华管理学院
                                     </router-link>
                                 </p>
-                                <el-button type="info">跟随</el-button>
+                                <el-button type="info" color="#000">跟随</el-button>
                             </div>
                         </div>
-                        <div class="rightBox">
+                        <div class="rightBox flex-ac-jc">
                             <div class="more">
                                 <p>作者的更多内容：</p>
                             </div>
@@ -76,10 +76,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="">
-                        關於： 陸球高中校園的FabLab設備備齐全的MakerSpace，配有Universal Systems 60W激光切割機，GlowForge激光切割機，OtherMill CNC铣床，Ultimaker 2 +和3 3D列印機，MakerBot R...更多关于 pltwball »
+                    <div class="font" >
+                        關於： 陸球高中校園的FabLab設備備齐全的MakerSpace，配有Universal Systems 60W激光切割機，GlowForge激光切割機，OtherMill CNC铣床，Ultimaker 2 +和3 3D列印機，MakerBot R...
+                        <span class="underline">
+                            <router-link to="/">
+                                更多关于 pltwball »
+                            </router-link>
+                        </span>
                     </div>
-                </div>                
+                </div>      
+                
+                <div class="">
+                    <p>
+                       这是一个六角形装饰木托盘，由（2）雪松栅栏纠察队制成，零件切割成30度的斜面和斜面。它可以用作室内或室外的装饰或功能性服务托盘。
+                    </p>
+                </div>
+
+                <div class="">
+
+                </div>
             </div>
         </el-col>
 
@@ -93,35 +108,6 @@
 </template>
 
 <style lang="scss" scoped>
-/* #region 定义通用的链接下划线样式 */
-/* 定义通用的链接下划线样式 */
-.link-underline {
-  color: #555;
-  position: relative;
-  transition: color 0.3s, border-bottom-width 0.3s;
-}
-
-.link-underline::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px; /* 调整下划线的高度 */
-  background-color: #555; /* 可以根据需要更改颜色 */
-  transition: width 0.3s ease;
-}
-
-/* 链接悬停时应用样式 */
-.link-underline:hover {
-  color: #000; /* 在悬停时更改文本颜色（可选） */
-}
-
-.link-underline:hover::before {
-  width: 100%;
-}
-// #endregion
 
 .container {
     margin: 0 20px;
@@ -137,9 +123,6 @@
         .content {
             color: #555;
             font-size: 14px;
-            display: flex;
-            align-items: center;
-
             .author {
                 .aBox {
                     a {
@@ -164,17 +147,12 @@
             }
            
             .svg {
-                display: flex;
-                align-items: center;
                 color: #999;
             }
         }
 
         .body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            
             .image {
 
             }
@@ -186,16 +164,10 @@
                 margin: 0 auto 20px;
                 color: #777;
                 font-weight: 400;
-                display: flex;
-                flex-direction: column;
                 width: 800px;
                 .avatar {
-                    display: flex;
-                    justify-content: space-between;
                     .leftBox {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+
                         .avatarLeft {
                             width: 80px; 
                             height: 80px;
@@ -223,23 +195,15 @@
                                 }
                             }
                             .school {
+                                margin-bottom: 3px;
                                a {
                                 font-size: 14px;
                                 color: #e86c00;
-                               }
-                               a::before {
-                                background-color: #555; /* You can change this color to your preference */
-                            }
-                                a:hover::before {
-                                width: 100%;
                             }
                         }
                     }
                 }
                     .rightBox {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
                         .avatarRight {
                             width: 80px;
                             height: 80px;   
@@ -253,9 +217,21 @@
                         }
                     }
                 }
+                .font {
+                        font-size: 13px; 
+                        color: #777;
+                        line-height: 20px;
+                        padding-top: 10px;
+                        overflow: hidden; /* 隐藏溢出文本 */
+                        text-overflow: ellipsis; /* 显示省略号 */
+                        a {
+                          color: #e86c00;
+                    }
+                }
             }
         }
     }
+    // 广告
     .right {
        margin-top: 2em;
        a {
